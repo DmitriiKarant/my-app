@@ -19,15 +19,13 @@ const CountersList = () => {
     };
 
     const handleDecrement = (id) => {
-    const newCounters = counters.map((counter) => {
-         return counter.id === id ? {...counter, value: counter.value - 1} : counter;
-    });
-        setCounters(newCounters);
+        setCounters(counters.map((counter) => {
+            return counter.id === id ? {...counter, value: counter.value - 1} : counter;
+        }));
     };
 
     const handleDelete = (id) => {
-        const newCounters = counters.filter(counter => counter.id !== id);
-        setCounters(newCounters);
+        setCounters(counters.filter(counter => counter.id !== id));
     };
 
     const handleReset = () => {
